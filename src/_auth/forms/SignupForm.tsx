@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import {
   Form,
   FormControl,
-  FormDescription,
+
   FormField,
   FormItem,
   FormLabel,
@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { signupValidation } from "@/lib/validation";
 import Loader from "@/components/shared/Loader";
+import { createUserAccount } from "@/lib/appwrite/api";
 
 const SignupForm = () => {
   const isLoading = false;
@@ -30,9 +31,11 @@ const SignupForm = () => {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof signupValidation>) {
-    Do something with the form values.
-    ✅ This will be type-safe and validated.
-    const newUser = await createUserAccount(values)
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    const newUser = await createUserAccount(values);
+
+    console.log(newUser)
   }
   return (
     <Form {...form}>
@@ -91,7 +94,7 @@ const SignupForm = () => {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input type="text" className="shad-input" {...field} />
+                <Input type="password" className="shad-input" {...field} />
               </FormControl>
               
               <FormMessage />
