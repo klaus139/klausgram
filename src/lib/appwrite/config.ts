@@ -2,8 +2,9 @@ import {Client, Account, Databases, Storage, Avatars } from 'appwrite';
 
 
 export const appwriteConfig = {
-    projectId: '653c0c648b9ed367cbcd',
-    url: 'https://cloud.appwrite.io/v1',
+    projectId: import.meta.env.VITE_APPWRITE_PROJECT_ID,
+    url: import.meta.env.VITE_APPWRITE_URL
+    
    
 }
 export const client = new Client();

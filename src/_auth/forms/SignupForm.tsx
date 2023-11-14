@@ -1,6 +1,8 @@
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "react-router-dom";
+import { useToast } from "@/components/ui/use-toast"
+
 import {
   Form,
   FormControl,
@@ -16,9 +18,14 @@ import { useForm } from "react-hook-form";
 import { signupValidation } from "@/lib/validation";
 import Loader from "@/components/shared/Loader";
 import { createUserAccount } from "@/lib/appwrite/api";
+import { useCreateUserAccountMutation } from "@/lib/react-query/queriesAndMutations";
 
 const SignupForm = () => {
-  const isLoading = false;
+  const { toast } = useToast();
+  
+
+  const { mutateAsync: createUserAccount, isLoading: isCreatingUser } = useCreateUserAccountMutation();
+
   const form = useForm<z.infer<typeof signupValidation>>({
     resolver: zodResolver(signupValidation),
     defaultValues: {
@@ -35,7 +42,13 @@ const SignupForm = () => {
     // ✅ This will be type-safe and validated.
     const newUser = await createUserAccount(values);
 
-    console.log(newUser)
+    if(!newUser){
+      return toast({
+        title: "Sign up failed. Please try again"
+      })
+
+      //const session = await signInAccount()
+    }
   }
   return (
     <Form {...form}>
@@ -102,7 +115,7 @@ const SignupForm = () => {
           )}
         />
         <Button type="submit" className="shad-button_primary">
-          {isLoading ? (
+          {isCreatingUser ? (
             <div className="flex-center gap-2"><Loader /> Loading...</div>
           ):"Sign up"}
         </Button>

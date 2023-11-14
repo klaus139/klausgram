@@ -6,6 +6,10 @@ import SignupForm from './_auth/forms/SignupForm';
 import AuthLayout from './_auth/AuthLayout';
 import RootLayout from './_root/RootLayout';
 
+import { Toaster } from "@/components/ui/toaster"
+
+
+
 const App = () => {
   return (
     <main className='flex h-screen'>
@@ -21,6 +25,7 @@ const App = () => {
             <Route index element={<Home />} />
             </Route>
         </Routes>
+        <Toaster />
 
     </main>
   )
