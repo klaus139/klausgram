@@ -18,6 +18,7 @@ import UpdateProfile from './_root/pages/UpdateProfile';
 
 
 
+
 const App = () => {
   return (
     <main className='flex h-screen'>
