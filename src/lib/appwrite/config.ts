@@ -6,7 +6,7 @@ export const appwriteConfig = {
     url: 'https://cloud.appwrite.io/v1',
     databaseId:'654e39fc4e35cfce719d',
     storageID:'654e39cb1d9bd4ed90f0',
-    userCollectionId:'654e7681bfa51e14a18d',
+    userCollectionId:'654e765e404cd707c8df',
     postCollectionId:'654e3a3d22ac157555a7',
     savesCollectionId:'654e7681bfa51e14a18d',
     
