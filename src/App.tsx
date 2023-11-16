@@ -17,11 +17,9 @@ import Saved from './_root/pages/Saved';
 import UpdateProfile from './_root/pages/UpdateProfile';
 
 
-
-
 const App = () => {
   return (
-    <main className='flex h-screen'>
+    <main className='flex flex-col h-screen w-[100%]'>
         <Routes>
             {/*public routes */}
             <Route element={<AuthLayout />}>
