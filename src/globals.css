@@ -219,7 +219,7 @@
 
   /* Left sidebar */
   .leftsidebar {
-    @apply hidden md:flex h-[100vh] px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
+    @apply hidden md:flex h-auto px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
   }
 
   .leftsidebar-link {
