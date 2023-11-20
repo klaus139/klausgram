@@ -5,7 +5,7 @@ import {
   useQueryClient,
 
 } from "@tanstack/react-query";
-import { createPost, createUserAccount, signOutAccount, signInAccount, getRecentPosts, likePost, savePost, deleteSavedPost } from "../appwrite/api";
+import { createPost, createUserAccount, signOutAccount, signInAccount, getRecentPosts, likePost, savePost, deleteSavedPost, getCurrentUser } from "../appwrite/api";
 import { INewPost, INewUser } from "@/types";
 import { QUERY_KEYS } from "./queryKeys";
 //import { string } from "zod";
@@ -112,3 +112,10 @@ export const useDeleteSavedPost = () => {
     },
   });
 };
+
+export const useGetCurrentUser = () => {
+  return useQuery({
+    queryKey: [QUERY_KEYS.GET_CURRENT_USER],
+    queryFn:getCurrentUser
+  })
+}
