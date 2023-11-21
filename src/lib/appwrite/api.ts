@@ -272,8 +272,8 @@ export async function updatePost(post: IUpdatePost) {
 
   try {
     let image = {
-      imageUrl: post.imageUrl,
-      imageId: post.imageId,
+      imageUrl: post?.imageUrl,
+      imageId: post?.imageId,
     };
 
     if (hasFileToUpdate) {
@@ -300,10 +300,10 @@ export async function updatePost(post: IUpdatePost) {
       appwriteConfig.postCollectionId,
       post.postId,
       {
-        caption: post.caption,
-        imageUrl: image.imageUrl,
-        imageId: image.imageId,
-        location: post.location,
+        caption: post?.caption,
+        imageUrl: image?.imageUrl,
+        imageId: image?.imageId,
+        location: post?.location,
         tags: tags,
       }
     );
@@ -379,7 +379,7 @@ export async function savePost(userId: string, postId: string) {
       appwriteConfig.savesCollectionId,
       ID.unique(),
       {
-        user: userId,
+        users: userId,
         post: postId,
       }
     );
