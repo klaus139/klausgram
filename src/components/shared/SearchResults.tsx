@@ -4,18 +4,20 @@ import GridPostList from './GridPostList';
 
 type SearchResultsProps = {
     isSearchFetching: boolean;
-    searchedPosts: Models.Document[];
+    searchedposts: Models.Document[];
 }
 
-const SearchResults = ({isSearchFetching, searchedPosts}:SearchResultsProps) => {
+const SearchResults = ({isSearchFetching, searchedposts}:SearchResultsProps) => {
     if(isSearchFetching)return <Loader />
-
-    if(searchedPosts && searchedPosts.documents.length > 0) return (
-    <GridPostList posts={searchedPosts.documents}/>
-    )
+    if(searchedposts && searchedposts.documents.length > 0){
+        return <GridPostList posts={searchedposts.documents} showUser={false} showStats={false} />
+    }
+    
+  
   return (
-    <p className='text-light-4 mt-10 text-center w-full'>No results found</p>
+    <div>SearchResults</div>
   )
 }
+
 
 export default SearchResults
