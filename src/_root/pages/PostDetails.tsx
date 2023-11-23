@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Loader from "@/components/shared/Loader";
 import PostStats from "@/components/shared/PostStats";
 import { Button } from "@/components/ui/button";
 import { useUserContext } from "@/context/AuthContext";
 import { useGetPostById } from "@/lib/react-query/queriesAndMutations";
 import { formatDate } from "@/lib/utils";
-import React from "react";
 import { Link, useParams } from "react-router-dom";
 
 const PostDetails = () => {
@@ -37,7 +37,7 @@ const PostDetails = () => {
               </p>
               <div className="flex-center gap-2 text-light-3">
                 <p className="subtle-semibold lg:small-regular">
-                  {formatDate!(post?.$createdAt)}
+                  {formatDate(post?.$createdAt as unknown as any) }
                 </p>
                 -
                 <p className="subtle-semibold lg:small-regular">
