@@ -11,7 +11,7 @@ import { useInView } from 'react-intersection-observer';
 const Explore = () => {
   //const posts = [];
   const {ref, inView} = useInView();
-  const {data: posts, fetchNextPage, hasNextPage} = useGetPosts()
+  const {data: posts, fetchNextPage, hasNextPage} = useGetPosts();
   const [searchValue, setSearchValue] = useState('');
 
   const debounceValue = useDebounce(searchValue, 500)
@@ -19,7 +19,7 @@ const Explore = () => {
 
   useEffect(() => {
     if(inView && !searchValue) fetchNextPage();
-  },[inView, searchValue])
+  },[fetchNextPage, inView, searchValue])
   
   if(!posts){
     return <div className="flex-center w-full h-full">
@@ -29,7 +29,7 @@ const Explore = () => {
   }
 
   const shouldShowSearchResults = searchValue !== '';
-  const shouldShowPosts = !shouldShowSearchResults && posts.pages.every((item) => item.documents.length === 0)
+  const shouldShowPosts = !shouldShowSearchResults && posts.pages.every((item:any) => item.documents.length === 0)
   return (
     <div className="explore-container">
       <div className="explore-inner_container">
