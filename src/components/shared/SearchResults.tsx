@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Models } from 'appwrite';
 import Loader from './Loader';
 import GridPostList from './GridPostList';

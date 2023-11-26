@@ -58,9 +58,11 @@ export const useSignOutAccount = () => {
 // ============================================================
 
 export const useGetPosts = () => {
+  let options:any;
   return useInfiniteQuery({
     queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
     queryFn: getInfinitePosts as any,
+    ...options,
     getNextPageParam: (lastPage: any) => {
       // If there's no data, there are no more pages.
       if (lastPage && lastPage.documents.length === 0) {

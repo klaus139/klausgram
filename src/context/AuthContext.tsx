@@ -101,7 +101,7 @@ const AuthProvider = ({ children} : { children: React.ReactNode }) => {
     </AuthContext.Provider>
   )
 }
-
+// eslint-disable-next-line react-refresh/only-export-components
+export const useUserContext = () => useContext(AuthContext)
 export default AuthProvider;
 
-export const useUserContext = () => useContext(AuthContext)
