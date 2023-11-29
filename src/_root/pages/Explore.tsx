@@ -53,7 +53,7 @@ const Explore = () => {
           <p className="small-medium md:base-medium text-light-2">All</p>
           <img src='/assets/icons/filter.svg' width={20} height={20} alt='filter'/>
 
-        </div>
+        </div> 
 
       </div>
 

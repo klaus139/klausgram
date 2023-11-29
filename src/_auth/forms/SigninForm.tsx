@@ -43,9 +43,10 @@ const SigninForm = () => {
     const session = await signInAccount({
       email:values.email,
       password: values.password,
+      
      })
      if(!session){
-      return toast({title: 'Sign In failed, please try again'})
+      return toast({title: 'Sign In failed, please check details'})
      }
 
      const isLoggedIn = await checkAuthUser();
@@ -54,7 +55,7 @@ const SigninForm = () => {
       navigate('/')
 
      }else{
-      return toast({title: 'Signup failed. Please try again.'})
+      return toast({title: 'SignIn failed. Please try again.'})
      }
   }
   return (

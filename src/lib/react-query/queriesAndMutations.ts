@@ -27,6 +27,7 @@ import {
   searchPosts,
   savePost,
   deleteSavedPost,
+  getSavedPosts,
 } from "@/lib/appwrite/api";
 import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
 
@@ -73,6 +74,13 @@ export const useGetPosts = () => {
       const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
       return lastId;
     },
+  });
+};
+
+export const useGetSavedPosts = (userId: any) => {
+  return useQuery({
+    queryKey: [QUERY_KEYS.GET_RECENT_POSTS],
+    queryFn: () => getSavedPosts(userId), // Pass a function that invokes getSavedPosts with the userId
   });
 };
 

@@ -429,6 +429,29 @@ export async function getUserPosts(userId?: string) {
   }
 }
 
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getSavedPosts = (userId?:string) => {
+  if(!userId)return;
+  try{
+    const savedPosts = databases.getDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.savesCollectionId,
+      userId,
+      
+    );
+
+    if(!savedPosts) throw Error;
+
+    return savedPosts;
+    console.log(savedPosts)
+
+  }catch(error){
+    console.log(error)
+  }
+  
+}
+
 // ============================== GET POPULAR POSTS (BY HIGHEST LIKE COUNT)
 export async function getRecentPosts() {
   try {
@@ -445,6 +468,7 @@ export async function getRecentPosts() {
     console.log(error);
   }
 }
+
 
 // ============================================================
 // USER
@@ -548,3 +572,4 @@ export async function updateUser(user: IUpdateUser) {
     console.log(error);
   }
 }
+
