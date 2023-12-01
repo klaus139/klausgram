@@ -15,6 +15,7 @@ import PostDetails from './_root/pages/PostDetails';
 import Profile from './_root/pages/Profile';
 import Saved from './_root/pages/Saved';
 import UpdateProfile from './_root/pages/UpdateProfile';
+import LikedPosts from './_root/pages/LikedPost';
 
 
 const App = () => {
@@ -36,8 +37,9 @@ const App = () => {
             <Route path='/create-post' element={<CreatePost />} />
             <Route path='/update-post/:id' element={<EditPost />} />
             <Route path='/posts/:id' element={<PostDetails />} />
-            <Route path='/profile/:id' element={<Profile />} />
+            <Route path='/profile/:id/*' element={<Profile />} />
             <Route path='/update-profile/:id' element={<UpdateProfile />} />
+            <Route path='/liked-posts/:id' element={<LikedPosts />} />
           
             </Route>
         </Routes>

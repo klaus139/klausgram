@@ -1,27 +1,47 @@
-# React + TypeScript + Vite
+Snapgram
+Snapgram is a TypeScript-based social media application developed using Next.js and Appwrite. This platform combines the power of Next.js for frontend development with Appwrite as a backend solution, providing a seamless and secure user experience.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Demo https://klausgram.netlify.app
 
-Currently, two official plugins are available:
+Features
+Infinite Scroll: Enjoy endless content browsing through the infinite scroll feature.
+Full-fledged Social Media Functionalities: Snapgram offers a range of functionalities expected in a social media platform, including posting, likes, comments, user profiles, and more.
+Built with TypeScript & Next.js: Leveraging TypeScript for strong typing and Next.js for efficient and performant frontend development.
+Secure Backend with Appwrite: Ensures data security and manages user authentication, allowing for a safe user experience.
+Technologies Used
+TypeScript: Utilized for type safety and enhanced development experience.
+Next.js: Powering the frontend with server-side rendering, routing, and optimized performance.
+Appwrite: Employed as the backend service, handling authentication, database, and API endpoints.
+Usage
+Clone the repository:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+bash
+Copy code
+git clone https://github.com/klaus139/klausgram
+Install dependencies:
 
-## Expanding the ESLint configuration
+bash
+Copy code
+cd snapgram
+npm install
+Start the development server:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+bash
+Copy code
+npm run dev
+Access the application locally at http://localhost:3000.
 
-- Configure the top-level `parserOptions` property like this:
+Getting Started
+To get started with Snapgram, follow these steps:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Sign up for an account on Snapgram.
+Explore the infinite scroll feature and engage with posts.
+Create your own posts, like and comment on others' posts.
+Customize your profile and settings.
+Contributions
+Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or create a pull request.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Before contributing, please review our Contribution Guidelines.
+
+License
+This project is licensed under the MIT License.

@@ -7,4 +7,4 @@ export {default as Home} from './Home';
 // export {default as EditPost} from './EditPost';
 // export {default as PostDetails} from './PostDetails';
 // export {default as AllUsers} from './AllUsers';
-// export {default as LikedPost} from './LikedPost';
+ export {default as LikedPost} from './LikedPost';
